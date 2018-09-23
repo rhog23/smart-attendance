@@ -12,7 +12,7 @@ $template_source = base_url('asset/template/');
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin Free Bootstrap Admin Dashboard Template</title>
+  <title><?php echo $title; ?></title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo $template_source ?>vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?php echo $template_source ?>vendors/css/vendor.bundle.base.css">
@@ -146,7 +146,7 @@ $template_source = base_url('asset/template/');
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('welcome')?>">
+            <a class="nav-link" href="<?php echo site_url('welcome') ?>">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -160,10 +160,10 @@ $template_source = base_url('asset/template/');
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo site_url('mahasiswa/all')?>">Mahasiswa</a>
+                  <a class="nav-link" href="<?php echo site_url('mahasiswa') ?>">Mahasiswa</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo site_url('dosen/all')?>">Dosen</a>
+                  <a class="nav-link" href="<?php echo site_url('dosen') ?>">Dosen</a>
                 </li>
               </ul>
             </div>
@@ -188,6 +188,7 @@ $template_source = base_url('asset/template/');
               </div>
               <!--weather card ends-->
             </div>
+            <?php echo $contents; ?>
           </div>
         </div>
         <!-- content-wrapper ends -->

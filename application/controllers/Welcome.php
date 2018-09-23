@@ -9,4 +9,9 @@ class Welcome extends CI_Controller
     $data['title'] = 'Welcome Page';
     $this->template->generate_view('index', 'welcome_message');
   }
+
+  public function get_mahasiswa()
+  {
+    
+  }
 }
