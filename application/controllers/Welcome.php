@@ -12,6 +12,6 @@ class Welcome extends CI_Controller
 
   public function get_mahasiswa()
   {
-    
+
   }
 }

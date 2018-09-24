@@ -8,6 +8,8 @@
             <tr>
               <th>NIM</th>
               <th>Nama Mahasiswa</th>
+              <th>Ubah</th>
+              <th>Hapus</th>
             </tr>
           </thead>
           <tbody>
@@ -15,6 +17,16 @@
               <tr>
                 <td><?php echo $mahasiswa['nim']; ?></td>
                 <td><?php echo $mahasiswa['mhs_nama']; ?></td>
+                <td>
+                  <a href="http://" class="btn btn-icons btn-rounded btn-inverse-outline-success">
+                    <i class="mdi mdi-pencil"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="http://" class="btn btn-icons btn-rounded btn-inverse-outline-warning">
+                    <i class="mdi mdi-delete"></i>
+                  </a>
+                </td>
               </tr>
             <?php endforeach; ?>
           </tbody>

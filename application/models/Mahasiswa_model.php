@@ -8,7 +8,7 @@ class Mahasiswa_model extends CI_Model
 
   private $table = 'mahasiswa';
 
-  public function select_all($nim = '', $columns = [], $limit = '', $start = '')
+  public function get_data($nim = '', $columns = [], $limit = '', $start = '')
   {
     if (sizeof($columns) === 0) {
       $this->db->select('*');
@@ -22,8 +22,21 @@ class Mahasiswa_model extends CI_Model
     if ($limit != null && $start != null) {
       $this->db->limit($limit, $start);
     }
+    if ($nim != null) {
+      return $this->db->get()->row_array();
+    } else {
+      return $this->db->get()->result_array();
+    }
+  }
 
-    return $this->db->get()->result_array();
+  public function insert($data)
+  {
+    $this->db->insert($this->table, $data);
+  }
+
+  public function update($nim, $data) {
+    $this->db->where('nim', $nim);
+    $this->db->update($this->table, $data);
   }
 
 }

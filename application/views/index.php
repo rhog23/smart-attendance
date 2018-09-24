@@ -103,7 +103,7 @@ $template_source = base_url('asset/template/');
           </li>
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="profile-text">Hello, Richard V.Welsh !</span>
+              <span class="profile-text">Hello, Admin !</span>
               <img class="img-xs rounded-circle" src="<?php echo $template_source ?>images/admin_icon.png" alt="Profile image">
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -136,7 +136,7 @@ $template_source = base_url('asset/template/');
                   <img src="<?php echo $template_source ?>images/admin_icon.png" alt="profile image">
                 </div>
                 <div class="text-wrapper">
-                  <p class="profile-name">Richard V.Welsh</p>
+                  <p class="profile-name">Admin</p>
                   <div>
                     <small class="designation text-muted">Manager</small>
                     <span class="status-indicator online"></span>
@@ -161,9 +161,6 @@ $template_source = base_url('asset/template/');
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
                   <a class="nav-link" href="<?php echo site_url('mahasiswa') ?>">Mahasiswa</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?php echo site_url('dosen') ?>">Dosen</a>
                 </li>
               </ul>
             </div>
