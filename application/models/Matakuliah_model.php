@@ -3,12 +3,12 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Mahasiswa_model extends CI_Model
+class Matakuliah_model extends CI_Model
 {
 
-  private $table = 'mahasiswa';
+  private $table = 'matakuliah';
 
-  public function get_data($nim = '', $columns = [], $limit = '', $start = '')
+  public function get_data($kode_matakuliah = '', $columns = [], $limit = '', $start = '')
   {
     if (sizeof($columns) === 0) {
       $this->db->select('*');
@@ -16,13 +16,13 @@ class Mahasiswa_model extends CI_Model
       $this->db->select("'" . implode(', ', $columns) . "'");
     }
     $this->db->from($this->table);
-    if ($nim != null) {
-      $this->db->where('nim', $nim);
+    if ($kode_matakuliah != null) {
+      $this->db->where('kode_matakuliah', $kode_matakuliah);
     }
     if ($limit != null && $start != null) {
       $this->db->limit($limit, $start);
     }
-    if ($nim != null) {
+    if ($kode_matakuliah != null) {
       return $this->db->get()->row_array();
     } else {
       return $this->db->get()->result_array();
@@ -34,9 +34,9 @@ class Mahasiswa_model extends CI_Model
     $this->db->insert($this->table, $data);
   }
 
-  public function update($nim, $data)
+  public function update($kode_matakuliah, $data)
   {
-    $this->db->where('nim', $nim);
+    $this->db->where('kode_matakuliah', $kode_matakuliah);
     $this->db->update($this->table, $data);
   }
 
@@ -47,4 +47,4 @@ class Mahasiswa_model extends CI_Model
 
 }
 
-/* End of file Mahasiswa_model.php */
+/* End of file Matakuliah_model.php */

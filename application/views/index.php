@@ -160,8 +160,18 @@ $template_source = base_url('asset/template/');
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
+                  <a class="nav-link" href="<?php echo site_url('prodi') ?>">Program Studi</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="<?php echo site_url('mahasiswa') ?>">Mahasiswa</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo site_url('dosen') ?>">Dosen</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo site_url('matakuliah') ?>">Matakuliah</a>
+                </li>
+                
               </ul>
             </div>
           </li>
@@ -185,8 +195,8 @@ $template_source = base_url('asset/template/');
               </div>
               <!--weather card ends-->
             </div>
-            <?php echo $contents; ?>
           </div>
+          <?php echo $contents; ?>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->

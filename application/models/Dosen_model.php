@@ -1,14 +1,12 @@
 <?php
 
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Mahasiswa_model extends CI_Model
+class Dosen_model extends CI_Model
 {
+  private $table = 'dosen';
 
-  private $table = 'mahasiswa';
-
-  public function get_data($nim = '', $columns = [], $limit = '', $start = '')
+  public function get_data($nid = '', $columns = [], $limit = '', $start = '')
   {
     if (sizeof($columns) === 0) {
       $this->db->select('*');
@@ -16,13 +14,13 @@ class Mahasiswa_model extends CI_Model
       $this->db->select("'" . implode(', ', $columns) . "'");
     }
     $this->db->from($this->table);
-    if ($nim != null) {
-      $this->db->where('nim', $nim);
+    if ($nid != null) {
+      $this->db->where('nid', $nid);
     }
     if ($limit != null && $start != null) {
       $this->db->limit($limit, $start);
     }
-    if ($nim != null) {
+    if ($nid != null) {
       return $this->db->get()->row_array();
     } else {
       return $this->db->get()->result_array();
@@ -34,9 +32,9 @@ class Mahasiswa_model extends CI_Model
     $this->db->insert($this->table, $data);
   }
 
-  public function update($nim, $data)
+  public function update($nid, $data)
   {
-    $this->db->where('nim', $nim);
+    $this->db->where('nid', $nid);
     $this->db->update($this->table, $data);
   }
 
@@ -47,4 +45,4 @@ class Mahasiswa_model extends CI_Model
 
 }
 
-/* End of file Mahasiswa_model.php */
+/* End of file Dosen_model.php */

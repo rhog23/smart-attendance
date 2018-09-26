@@ -8,7 +8,7 @@
           <label for="<?php echo $value['field']; ?>" class="col-sm-3 col-form-label"><?php echo $value['label']; ?></label>
           <div class="col-sm-9">
             <span class="text-danger"><?php echo form_error($value['field']); ?></span>
-            <input type="<?php echo $value['type']; ?>" class="form-control" name="<?php echo $value['field']; ?>" value= "<?php echo isset(${$value['field']}) ? ${$value['field']} : (($value['value'] == true) ? set_value($value['field']) : ""); ?>" <?php echo ((isset($value['id']) && ($value['id'] == true))) ? 'readonly' : ''; ?>>
+            <input type="<?php echo $value['type']; ?>" class="form-control" name="<?php echo $value['field']; ?>" value= "<?php echo isset(${$value['field']}) ? ${$value['field']} : (($value['value'] == true) ? set_value($value['field']) : ""); ?>" <?php echo (($status == 'update') && (isset($value['id']) && ($value['id'] == true))) ? 'readonly' : ''; ?>>
           </div>
         </div>
         <?php endforeach; ?>

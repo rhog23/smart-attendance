@@ -7,16 +7,16 @@
             <i class="mdi mdi-account-multiple text-success icon-lg"></i>
           </div>
           <div class="float-right">
-            <p class="mb-0 text-right">Jumlah Mahasiswa</p>
+            <p class="mb-0 text-right">Jumlah Matakuliah</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0"><?php echo $jumlah_mahasiswa; ?></h3>
+              <h3 class="font-weight-medium text-right mb-0"><?php echo $jumlah_matakuliah; ?></h3>
             </div>
           </div>
         </div>
         <p class="text-muted mt-3 mb-0">
-          Tambah Mahasiswa
+          Tambah Matakuliah
         </p>
-        <a href="<?php echo base_url('mahasiswa/form_mahasiswa') ?>">
+        <a href="<?php echo base_url('matakuliah/form_matakuliah') ?>">
           <button type="button" class="btn btn-icons btn-rounded btn-primary">
             <i class="mdi mdi-account-plus"></i>
           </button>
@@ -29,15 +29,16 @@
   <div class="col-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Data Mahasiswa</h4>
+        <h4 class="card-title">Data Matakuliah</h4>
         <div class="d-flex flex-row align-items-center">
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead>
               <tr>
                 <th>#</th>
-                <th>NIM</th>
-                <th>Nama Mahasiswa</th>
+                <th>Kode Matakuliah</th>
+                <th>Nama Matakuliah</th>
+                <th>SKS</th>
                 <th>Ubah</th>
                 <th>Hapus</th>
               </tr>
@@ -45,14 +46,15 @@
             <tbody>
               <?php 
               $no = 1;
-              foreach ($all_mahasiswa as $mahasiswa) :
+              foreach ($all_matakuliah as $matakuliah) :
               ?>
                 <tr>
                   <td><?php echo $no; ?></td>
-                  <td><?php echo $mahasiswa['nim']; ?></td>
-                  <td><?php echo $mahasiswa['mhs_nama']; ?></td>
+                  <td><?php echo $matakuliah['kode_matakuliah']; ?></td>
+                  <td><?php echo $matakuliah['nama_matakuliah']; ?></td>
+                  <td><?php echo $matakuliah['sks']; ?></td>
                   <td>
-                    <a href="<?php echo base_url('mahasiswa/form_mahasiswa/' . $mahasiswa['nim']); ?>" class="btn btn-icons btn-rounded btn-inverse-outline-success">
+                    <a href="<?php echo base_url('matakuliah/form_matakuliah/' . $matakuliah['kode_matakuliah']) ?>" class="btn btn-icons btn-rounded btn-inverse-outline-success">
                       <i class="mdi mdi-pencil"></i>
                     </a>
                   </td>

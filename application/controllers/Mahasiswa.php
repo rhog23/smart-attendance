@@ -44,13 +44,15 @@ class Mahasiswa extends CI_Controller
     $data['title'] = ucwords(str_replace('_', ' ', $page));
 
     $data['all_mahasiswa'] = $this->mahasiswa_model->get_data();
+    $data['jumlah_mahasiswa'] = $this->mahasiswa_model->count();
 
     $this->template->generate_view('index', 'mahasiswa/' . $page, $data);
   }
 
   public function form_mahasiswa()
   {
-    $status = 'insert';
+    $data['status'] = 'insert';
+    $data['title'] = 'Menambah Data Mahasiswa';
     $form = new Form();
     $form->set_config($this->form_config);
     $form->set_action(base_url('mahasiswa/form_mahasiswa'));
@@ -58,13 +60,17 @@ class Mahasiswa extends CI_Controller
     $form->set_title('Tambah Mahasiswa');
 
     if (preg_match('/\d{10}/', $this->uri->segment(3)) == true) {
+      $data['status'] = 'update';
+      $data['title'] = 'Ubah Data Mahasiswa';
       $form->set_title('Update Mahasiswa');
-      $form->set_action(base_url('mahasiswa/form_mahasiswa/'.$this->uri->segment(3)));
+      $form->set_action(base_url('mahasiswa/form_mahasiswa/' . $this->uri->segment(3)));
       if (sizeof($this->mahasiswa_model->get_data($nim = $this->uri->segment(3))) != 0) {
         $query = $this->mahasiswa_model->get_data($nim = $this->uri->segment(3));
         foreach ($this->form_config as $value) :
           $data[$value['field']] = $query[$value['field']];
         endforeach;
+      } else {
+        show_404();
       }
     }
 
@@ -74,7 +80,11 @@ class Mahasiswa extends CI_Controller
 
       if ($this->form_validation->run('mahasiswa') == true) {
         foreach ($this->form_config as $value) :
+          if ($value['field'] == 'mhs_nama') {
+          $mhs[$value['field']] = preg_replace('/\d*/', '', $this->input->post($value['field']));
+        } else {
           $mhs[$value['field']] = $this->input->post($value['field']);
+        }
         endforeach;
 
         if (!empty($this->uri->segment(3))) {
@@ -85,20 +95,15 @@ class Mahasiswa extends CI_Controller
 
         redirect(base_url('mahasiswa'));
       }
+    } elseif ($this->input->post('submit') == 'Cancel') {
+      redirect(base_url('mahasiswa'));
     }
 
     $data['form_config'] = $form->get_config();
     $data['action'] = $form->get_action();
     $data['form_title'] = $form->get_title();
-    $data['title'] = 'Menambah Data Mahasiswa';
 
     $this->template->generate_view('index', 'form_template', $data);
-  }
-
-  function test()
-  {
-    $result = $this->mahasiswa_model->get_data($nim = '2015131012');
-    echo $result['nim'];
   }
 
 }

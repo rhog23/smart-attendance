@@ -7,16 +7,16 @@
             <i class="mdi mdi-account-multiple text-success icon-lg"></i>
           </div>
           <div class="float-right">
-            <p class="mb-0 text-right">Jumlah Mahasiswa</p>
+            <p class="mb-0 text-right">Jumlah Dosen</p>
             <div class="fluid-container">
-              <h3 class="font-weight-medium text-right mb-0"><?php echo $jumlah_mahasiswa; ?></h3>
+              <h3 class="font-weight-medium text-right mb-0"><?php echo $jumlah_dosen; ?></h3>
             </div>
           </div>
         </div>
         <p class="text-muted mt-3 mb-0">
-          Tambah Mahasiswa
+          Tambah Dosen
         </p>
-        <a href="<?php echo base_url('mahasiswa/form_mahasiswa') ?>">
+        <a href="<?php echo base_url('dosen/form_dosen') ?>">
           <button type="button" class="btn btn-icons btn-rounded btn-primary">
             <i class="mdi mdi-account-plus"></i>
           </button>
@@ -29,15 +29,14 @@
   <div class="col-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Data Mahasiswa</h4>
-        <div class="d-flex flex-row align-items-center">
+        <h4 class="card-title">Data Dosen</h4>
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead>
               <tr>
                 <th>#</th>
-                <th>NIM</th>
-                <th>Nama Mahasiswa</th>
+                <th>NID</th>
+                <th>Nama Dosen</th>
                 <th>Ubah</th>
                 <th>Hapus</th>
               </tr>
@@ -45,14 +44,14 @@
             <tbody>
               <?php 
               $no = 1;
-              foreach ($all_mahasiswa as $mahasiswa) :
+              foreach ($all_dosen as $dosen) :
               ?>
                 <tr>
                   <td><?php echo $no; ?></td>
-                  <td><?php echo $mahasiswa['nim']; ?></td>
-                  <td><?php echo $mahasiswa['mhs_nama']; ?></td>
+                  <td><?php echo $dosen['nid']; ?></td>
+                  <td><?php echo $dosen['dosen_nama']; ?></td>
                   <td>
-                    <a href="<?php echo base_url('mahasiswa/form_mahasiswa/' . $mahasiswa['nim']); ?>" class="btn btn-icons btn-rounded btn-inverse-outline-success">
+                    <a href="http://" class="btn btn-icons btn-rounded btn-inverse-outline-success">
                       <i class="mdi mdi-pencil"></i>
                     </a>
                   </td>
@@ -62,8 +61,7 @@
                     </a>
                   </td>
                 </tr>
-              <?php 
-              $no++;
+              <?php $no++;
               endforeach;
               ?>
             </tbody>
