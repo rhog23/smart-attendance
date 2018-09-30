@@ -4,7 +4,7 @@
       <div class="card-body">
         <div class="clearfix">
           <div class="float-left">
-            <i class="mdi mdi-account-multiple text-success icon-lg"></i>
+            <i class="mdi mdi-book-multiple text-success icon-lg"></i>
           </div>
           <div class="float-right">
             <p class="mb-0 text-right">Jumlah Matakuliah</p>

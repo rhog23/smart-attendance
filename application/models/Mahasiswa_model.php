@@ -8,12 +8,12 @@ class Mahasiswa_model extends CI_Model
 
   private $table = 'mahasiswa';
 
-  public function get_data($nim = '', $columns = [], $limit = '', $start = '')
+  public function get_data($nim = '', $columns = "", $limit = '', $start = '')
   {
     if (sizeof($columns) === 0) {
       $this->db->select('*');
     } else {
-      $this->db->select("'" . implode(', ', $columns) . "'");
+      $this->db->select($columns);
     }
     $this->db->from($this->table);
     if ($nim != null) {

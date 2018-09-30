@@ -15,6 +15,7 @@ $template_source = base_url('asset/template/');
   <title><?php echo $title; ?></title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo $template_source ?>vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="<?php echo $template_source ?>vendors/iconfonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php echo $template_source ?>vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="<?php echo $template_source ?>vendors/css/vendor.bundle.addons.css">
   <!-- endinject -->
@@ -171,7 +172,9 @@ $template_source = base_url('asset/template/');
                 <li class="nav-item">
                   <a class="nav-link" href="<?php echo site_url('matakuliah') ?>">Matakuliah</a>
                 </li>
-                
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo site_url('jadwal') ?>">Jadwal</a>
+                </li>
               </ul>
             </div>
           </li>

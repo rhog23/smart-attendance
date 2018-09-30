@@ -9,14 +9,14 @@ class Prodi extends CI_Controller
       'field' => 'kode_prodi',
       'label' => 'Kode Prodi',
       'type' => 'text',
-      'value' => true,
+      'form_value' => true,
       'id' => true
     ],
     [
       'field' => 'nama_prodi',
       'label' => 'Nama Prodi',
       'type' => 'text',
-      'value' => true
+      'form_value' => true
     ]
   ];
 

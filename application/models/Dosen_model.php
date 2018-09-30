@@ -6,12 +6,12 @@ class Dosen_model extends CI_Model
 {
   private $table = 'dosen';
 
-  public function get_data($nid = '', $columns = [], $limit = '', $start = '')
+  public function get_data($nid = '', $columns = '', $limit = '', $start = '')
   {
     if (sizeof($columns) === 0) {
       $this->db->select('*');
     } else {
-      $this->db->select("'" . implode(', ', $columns) . "'");
+      $this->db->select($columns);
     }
     $this->db->from($this->table);
     if ($nid != null) {

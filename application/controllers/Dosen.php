@@ -9,14 +9,14 @@ class Dosen extends CI_Controller
       'field' => 'nid',
       'label' => 'NID',
       'type' => 'text',
-      'value' => true,
+      'form_value' => true,
       'id' => true
     ],
     [
       'field' => 'dosen_nama',
       'label' => 'Nama Dosen',
       'type' => 'text',
-      'value' => true
+      'form_value' => true
     ]
   ];
 

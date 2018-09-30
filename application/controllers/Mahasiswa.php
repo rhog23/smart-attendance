@@ -8,14 +8,14 @@ class Mahasiswa extends CI_Controller
       'field' => 'nim',
       'label' => 'NIM',
       'type' => 'text',
-      'value' => true,
+      'form_value' => true,
       'id' => true
     ],
     [
       'field' => 'mhs_nama',
       'label' => 'Nama Mahasiswa',
       'type' => 'text',
-      'value' => true
+      'form_value' => true
     ]
   ];
 

@@ -8,12 +8,12 @@ class Matakuliah_model extends CI_Model
 
   private $table = 'matakuliah';
 
-  public function get_data($kode_matakuliah = '', $columns = [], $limit = '', $start = '')
+  public function get_data($kode_matakuliah = '', $columns = '', $limit = '', $start = '')
   {
-    if (sizeof($columns) === 0) {
+    if ($columns === '') {
       $this->db->select('*');
     } else {
-      $this->db->select("'" . implode(', ', $columns) . "'");
+      $this->db->select($columns);
     }
     $this->db->from($this->table);
     if ($kode_matakuliah != null) {

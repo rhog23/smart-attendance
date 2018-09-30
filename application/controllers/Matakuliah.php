@@ -9,20 +9,20 @@ class Matakuliah extends CI_Controller
       'field' => 'kode_matakuliah',
       'label' => 'Kode Matakuliah',
       'type' => 'text',
-      'value' => true,
+      'form_value' => true,
       'id' => true
     ],
     [
       'field' => 'nama_matakuliah',
       'label' => 'Nama Matakuliah',
       'type' => 'text',
-      'value' => true
+      'form_value' => true
     ],
     [
       'field' => 'sks',
       'label' => 'SKS',
       'type' => 'number',
-      'value' => true
+      'form_value' => true
     ]
   ];
 

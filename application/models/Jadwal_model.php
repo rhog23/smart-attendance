@@ -1,14 +1,13 @@
 <?php
 
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Prodi_model extends CI_Model
+class Jadwal_model extends CI_Model
 {
 
-  private $table = 'program_studi';
+  private $table = 'jadwal';
 
-  public function get_data($kode_prodi = '', $columns = "", $limit = '', $start = '')
+  public function get_data($id_jadwal = '', $columns = "", $limit = '', $start = '')
   {
     if (sizeof($columns) === 0) {
       $this->db->select('*');
@@ -16,28 +15,17 @@ class Prodi_model extends CI_Model
       $this->db->select($columns);
     }
     $this->db->from($this->table);
-    if ($kode_prodi != null) {
-      $this->db->where('kode_prodi', $kode_prodi);
+    if ($id_jadwal != null) {
+      $this->db->where('id_jadwal', $id_jadwal);
     }
     if ($limit != null && $start != null) {
       $this->db->limit($limit, $start);
     }
-    if ($kode_prodi != null) {
+    if ($id_jadwal != null) {
       return $this->db->get()->row_array();
     } else {
       return $this->db->get()->result_array();
     }
-  }
-
-  public function insert($data)
-  {
-    $this->db->insert($this->table, $data);
-  }
-
-  public function update($kode_prodi, $data)
-  {
-    $this->db->where('kode_prodi', $kode_prodi);
-    $this->db->update($this->table, $data);
   }
 
   public function count()
@@ -47,4 +35,4 @@ class Prodi_model extends CI_Model
 
 }
 
-/* End of file Prodi_model.php */
+/* End of file Jadwal_model.php */
