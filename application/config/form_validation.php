@@ -52,5 +52,47 @@ $config = [
       'label' => 'Nama Prodi',
       'rules' => 'required|alpha_numeric_spaces'
     ]
+  ],
+  'jadwal' => [
+    [
+      'field' => 'kode_matakuliah',
+      'label' => 'Matakuliah',
+      'rules' => 'required'
+    ],
+    [
+      'field' => 'kode_prodi',
+      'label' => 'Prodi',
+      'rules' => 'required',
+    ],
+    [
+      'field' => 'nid',
+      'label' => 'Dosen',
+      'rules' => 'required'
+    ],
+    [
+      'field' => 'semester',
+      'label' => 'Semester',
+      'rules' => 'required'
+    ],
+    [
+      'field' => 'hari',
+      'label' => 'Hari',
+      'rules' => 'required'
+    ],
+    [
+      'field' => 'ruang',
+      'label' => 'Ruang',
+      'rules' => 'required'
+    ],
+    [
+      'field' => 'waktu_mulai',
+      'label' => 'Waktu',
+      'rules' => 'required'
+    ],
+    [
+      'field' => 'waktu_selesai',
+      'label' => 'Waktu',
+      'rules' => 'required'
+    ]
   ]
 ];

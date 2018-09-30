@@ -25,13 +25,14 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Matakuliah</th>
-                <th>Prodi</th>
-                <th>Dosen</th>
-                <th>Semester</th>
                 <th>Hari</th>
+                <th>Pukul</th>
+                <th>Semester</th>
+                <th>Mata Kuliah</th>
+                <th>SKS</th>
+                <th>Dosen Pengampu</th>
+                <th>Prodi</th>
                 <th>Ruang</th>
-                <th>Waktu</th>
                 <th>Ubah</th>
                 <th>Hapus</th>
               </tr>
@@ -43,13 +44,18 @@
               ?>
                 <tr>
                   <td><?php echo $no; ?></td>
-                  <td><?php echo $jadwal['matakuliah']; ?></td>
-                  <td><?php echo $jadwal['prodi']; ?></td>
-                  <td><?php echo $jadwal['dosen']; ?></td>
-                  <td><?php echo $jadwal['semester']; ?></td>
                   <td><?php echo $jadwal['hari']; ?></td>
+                  <td><?php echo $jadwal['waktu_mulai'] . ' - ' . $jadwal['waktu_selesai']; ?></td>
+                  <td><?php echo $jadwal['semester']; ?></td>
+                  <?php foreach ($all_matakuliah as $matakuliah) : ?>
+                  <?php if ($matakuliah['kode_matakuliah'] == $jadwal['kode_matakuliah']) : ?>
+                  <td><?php echo $matakuliah['nama_matakuliah'] ?></td>
+                  <td><?php echo $matakuliah['sks'] ?></td>
+                  <?php endif ?>
+                  <?php endforeach ?>
+                  <td><?php echo (isset($all_dosen[$jadwal['nid']])) ? $all_dosen[$jadwal['nid']] : ''; ?></td>
+                  <td><?php echo (isset($all_prodi[$jadwal['kode_prodi']])) ? $all_prodi[$jadwal['kode_prodi']] : ''; ?></td>
                   <td><?php echo $jadwal['ruang']; ?></td>
-                  <td><?php echo $jadwal['waktu']; ?></td>
                   <td>
                     <a href="<?php echo base_url('jadwal/form_jadwal/' . $jadwal['id_jadwal']) ?>" class="btn btn-icons btn-rounded btn-inverse-outline-success">
                       <i class="mdi mdi-pencil"></i>

@@ -28,6 +28,11 @@ class Jadwal_model extends CI_Model
     }
   }
 
+  public function insert($data)
+  {
+    $this->db->insert($this->table, $data);
+  }
+
   public function count()
   {
     return $this->db->count_all_results($this->table);
