@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Absensi extends CI_Controller
@@ -27,12 +27,17 @@ class Absensi extends CI_Controller
 
   public function absensi_mahasiswa()
   {
-    $this->load->view('absensi_mahasiswa');
+    echo $_POST['name'];
   }
 
   public function take_picture()
   {
-    shell_exec("python asset/take_picture.py");
+    $src = $_FILES['file']['tmp_name'];
+    // $targ = base_url() . "images/" . $_FILES['file']['name'];
+    $targ = $_SERVER['DOCUMENT_ROOT'] . "/smart-attendance/images/" . $_FILES['file']['name'];
+    move_uploaded_file($src, $targ);
+    $data = 'success';
+    echo json_encode($data);
   }
 
 }
