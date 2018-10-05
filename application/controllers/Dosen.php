@@ -9,8 +9,7 @@ class Dosen extends CI_Controller
       'field' => 'nid',
       'label' => 'NID',
       'type' => 'text',
-      'form_value' => true,
-      'id' => true
+      'form_value' => true
     ],
     [
       'field' => 'dosen_nama',
@@ -82,7 +81,7 @@ class Dosen extends CI_Controller
         endforeach;
 
         if (!empty($this->uri->segment(3))) {
-          $this->dosen_model->update($dosen['nid'], $dosen);
+          $this->dosen_model->update($this->uri->segment(3), $dosen);
         } else {
           $this->dosen_model->insert($dosen);
         }

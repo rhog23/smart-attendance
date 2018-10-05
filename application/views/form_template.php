@@ -10,8 +10,8 @@
           <div class="col-sm-9">
             <span class="text-danger"><?php echo form_error($value['field']); ?></span>
             <select class="form-control form-control-sm" name="<?php echo $value['field']; ?>">
-              <?php foreach ($value['options'] as $key => $value) : ?>
-                <option value="<?php echo $key ?>"><?php echo $value ?></option>
+              <?php foreach ($value['options'] as $key => $option_value) : ?>
+                <option value="<?php echo $key; ?>" <?php echo (!empty(${$value['field']}) && ${$value['field']} == $key) ? 'selected' : '' ?>><?php echo $option_value; ?></option>
               <?php endforeach; ?>
             </select>
           </div>

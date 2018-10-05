@@ -51,7 +51,7 @@
                   <td><?php echo $dosen['nid']; ?></td>
                   <td><?php echo $dosen['dosen_nama']; ?></td>
                   <td>
-                    <a href="http://" class="btn btn-icons btn-rounded btn-inverse-outline-success">
+                    <a href="<?php echo base_url('dosen/form_dosen/' . $dosen['nid']) ?>" class="btn btn-icons btn-rounded btn-inverse-outline-success">
                       <i class="mdi mdi-pencil"></i>
                     </a>
                   </td>

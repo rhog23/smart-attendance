@@ -107,7 +107,7 @@ class Jadwal extends CI_Controller
 
     $form->set_title('Tambah Jadwal');
 
-    if (preg_match('/\d{10}/', $this->uri->segment(3)) == true) {
+    if (preg_match('/\d/', $this->uri->segment(3)) == true) {
       $data['status'] = 'update';
       $data['title'] = 'Ubah Data Jadwal';
       $form->set_title('Update Jadwal');

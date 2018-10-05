@@ -7,7 +7,7 @@
         </p>
         <a href="<?php echo base_url('jadwal/form_jadwal') ?>">
           <button type="button" class="btn btn-icons btn-rounded btn-primary">
-            <i class="fa fa-calendar"></i>
+            <i class="mdi mdi-plus"></i>
           </button>
         </a>
       </div>

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "cvuorinen/raspicam-php": "^1.0"
+    }
+}

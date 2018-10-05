@@ -21,7 +21,7 @@ $config = [
     [
       'field' => 'dosen_nama',
       'label' => 'Nama Dosen',
-      'rules' => 'required|alpha_numeric_spaces'
+      'rules' => 'required'
     ]
   ],
   'matakuliah' => [

@@ -32,12 +32,6 @@ $template_source = base_url('asset/template/');
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html">
-          <img src="<?php echo $template_source ?>images/logo.svg" alt="logo" />
-        </a>
-        <a class="navbar-brand brand-logo-mini" href="index.html">
-          <img src="<?php echo $template_source ?>images/logo-mini.svg" alt="logo" />
-        </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
@@ -47,7 +41,7 @@ $template_source = base_url('asset/template/');
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" hidden>
             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
               <i class="mdi mdi-bell"></i>
               <span class="count">4</span>
@@ -130,22 +124,6 @@ $template_source = base_url('asset/template/');
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item nav-profile">
-            <div class="nav-link">
-              <div class="user-wrapper">
-                <div class="profile-image">
-                  <img src="<?php echo $template_source ?>images/admin_icon.png" alt="profile image">
-                </div>
-                <div class="text-wrapper">
-                  <p class="profile-name">Admin</p>
-                  <div>
-                    <small class="designation text-muted">Manager</small>
-                    <span class="status-indicator online"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('welcome') ?>">
               <i class="menu-icon mdi mdi-television"></i>
@@ -153,12 +131,12 @@ $template_source = base_url('asset/template/');
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data">
               <i class="menu-icon mdi mdi-database"></i>
               <span class="menu-title">Data</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="data">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
                   <a class="nav-link" href="<?php echo site_url('prodi') ?>">Program Studi</a>
@@ -178,6 +156,12 @@ $template_source = base_url('asset/template/');
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a href="<?php echo site_url('absensi'); ?>" class="nav-link">
+              <i class="menu-icon fa fa-pencil-square-o"></i>
+              <span class="menu-title">Laporan Absensi</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->
@@ -186,7 +170,7 @@ $template_source = base_url('asset/template/');
           <div class="row">
             <div class="col-12 grid-margin stretch-card">
               <!--weather card-->
-              <div class="card card-weather">
+              <div class="card">
                 <div class="card-body">
                   <div class="weather-date-location">
                     <h3><?php echo $day->get_date(); ?></h3>

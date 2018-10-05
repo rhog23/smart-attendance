@@ -18,7 +18,7 @@
         </p>
         <a href="<?php echo base_url('prodi/form_prodi') ?>">
           <button type="button" class="btn btn-icons btn-rounded btn-primary">
-            <i class="mdi mdi-account-plus"></i>
+            <i class="mdi mdi-plus"></i>
           </button>
         </a>
       </div>
