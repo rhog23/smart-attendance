@@ -8,7 +8,7 @@ class Dosen_model extends CI_Model
 
   public function get_data($nid = '', $columns = '', $limit = '', $start = '')
   {
-    if (sizeof($columns) === 0) {
+    if (empty($columns)) {
       $this->db->select('*');
     } else {
       $this->db->select($columns);

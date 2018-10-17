@@ -10,7 +10,7 @@ class Mahasiswa_model extends CI_Model
 
   public function get_data($nim = '', $columns = "", $limit = '', $start = '')
   {
-    if (sizeof($columns) === 0) {
+    if (empty($columns)) {
       $this->db->select('*');
     } else {
       $this->db->select($columns);

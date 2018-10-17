@@ -27,7 +27,17 @@ class Absensi extends CI_Controller
 
   public function absensi_mahasiswa()
   {
-    echo $_POST['name'];
+    $tempFile = $_FILES['file']['tmp_name'];
+
+// Here you would process the file....
+
+// Let's pretend you have the full path to the processed image in the $processedFilePath var.
+// Now we will output the processed file contents so the WS server will receive it.
+
+// The header isn't necessary but let's put it.
+    header('Content-Type: image/jpg');
+
+    echo file_get_contents($processedFilePath);
   }
 
   public function take_picture()

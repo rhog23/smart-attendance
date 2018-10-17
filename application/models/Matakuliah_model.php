@@ -10,7 +10,7 @@ class Matakuliah_model extends CI_Model
 
   public function get_data($kode_matakuliah = '', $columns = '', $limit = '', $start = '')
   {
-    if ($columns === '') {
+    if (empty($columns)) {
       $this->db->select('*');
     } else {
       $this->db->select($columns);

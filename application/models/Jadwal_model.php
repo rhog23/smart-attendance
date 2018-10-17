@@ -9,7 +9,7 @@ class Jadwal_model extends CI_Model
 
   public function get_data($id_jadwal = '', $columns = "", $limit = '', $start = '')
   {
-    if (sizeof($columns) === 0) {
+    if (empty($columns)) {
       $this->db->select('*');
     } else {
       $this->db->select($columns);
